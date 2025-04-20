@@ -1,0 +1,69 @@
+# RPG Helper 2 - Product Requirements Document
+
+## Project Overview
+RPG Helper 2 is a web application designed to help Game Masters and players manage their RPG campaigns. Built with Next.js, Material-UI, and Tailwind CSS, it aims to provide a modern, responsive, and user-friendly interface for organizing campaign information.
+
+## Core Features
+
+### 1. User Interface & Navigation
+- Implement a dark-themed Material-UI design system
+- Create a responsive layout that works on desktop and mobile devices
+- Design an intuitive navigation system with a sidebar/drawer
+- Implement breadcrumb navigation for deep linking
+
+### 2. Campaign Management
+- Create, edit, and delete campaigns
+- Track campaign status and progress
+- Manage campaign settings and house rules
+- Support multiple active campaigns
+
+### 3. Character Management
+- Create and edit character sheets
+- Track character stats, inventory, and abilities
+- Support custom character attributes
+- Include character portraits and notes
+
+### 4. Session Planning
+- Create and manage session notes
+- Track session dates and attendance
+- Plan encounters and events
+- Create and manage quest logs
+
+### 5. World Building
+- Create and organize locations
+- Manage NPCs and their relationships
+- Create and track factions
+- Store world lore and history
+
+## Technical Requirements
+
+### Frontend
+- Next.js 14 with App Router
+- Material-UI v5 with custom theme
+- Tailwind CSS for additional styling
+- TypeScript for type safety
+- Responsive design for all screen sizes
+
+### State Management
+- Implement efficient state management
+- Handle form state and validation
+- Manage client-side caching
+- Support offline functionality
+
+### Performance
+- Optimize page load times
+- Implement code splitting
+- Optimize image loading and caching
+- Ensure smooth transitions
+
+### Testing
+- Unit tests for components
+- Integration tests for features
+- End-to-end testing
+- Accessibility testing
+
+## Future Considerations
+- Real-time collaboration features
+- PDF export for character sheets
+- Integration with popular RPG systems
+- Mobile app version

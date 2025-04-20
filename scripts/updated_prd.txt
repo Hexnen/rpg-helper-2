@@ -1,0 +1,72 @@
+# RPG Helper 2.0 - Product Requirements Document
+
+## Overview
+RPG Helper is a comprehensive web application designed to help tabletop RPG players manage their campaigns, characters, and game sessions. The app provides tools for game masters to organize campaign details, track player characters, and plan upcoming sessions.
+
+## Tech Stack
+- Next.js 15+ with App Router and React 19+
+- TypeScript for type safety
+- Material UI v7 for UI components
+- Zustand for state management (with React 19 compatibility solutions)
+
+## Technical Requirements & Constraints
+- The application must be responsive and work well on both desktop and mobile devices.
+- Code must follow TypeScript best practices for type safety.
+- Material UI v7 integration requires special handling:
+  - Use `@mui/material-nextjs/v15-appRouter` package for Next.js 15 integration
+  - Replace Lab components with custom implementations due to compatibility issues
+  - Handle Grid component changes (remove deprecated props like `item`, `xs`, `sm`, `md`, etc.)
+- Next.js 15 / React 19 considerations:
+  - Dynamic route parameters must be unwrapped with `React.use()` before accessing
+  - Zustand state selectors should be memoized or use mock data for rendering
+  - Ensure all components are properly marked with 'use client' directive where needed
+- Consider performance optimization for loading large datasets.
+
+## Core Features
+
+### Campaign Management
+- Create, edit, and delete RPG campaigns
+- Store basic campaign info: title, system (D&D, Pathfinder, etc.), description
+- Track campaign progress, sessions, and storylines
+- View campaign details including characters, locations, and plot points
+
+### Character Management
+- Create and manage player and non-player characters
+- Track character stats, inventory, and progression
+- Assign characters to specific campaigns
+- Character sheet visualization
+
+### Session Planning
+- Schedule game sessions with date, time, and location
+- Create session notes and objectives
+- Track attendance and session recaps
+- Send reminders to players
+
+### Game Resources
+- Rules reference for popular systems
+- Dice roller and random generators
+- Searchable database of items, spells, monsters, etc.
+- Map creation and management
+
+## User Interface Requirements
+- Clean, intuitive design with dark and light theme options
+- Responsive layout for different screen sizes
+- Accessible design following WCAG guidelines
+- Interactive elements should provide appropriate feedback
+
+## User Roles
+- Game Masters: Full access to create and manage campaigns
+- Players: Access to view campaign details and manage their characters
+- Visitors: Limited access to public resources
+
+## Future Expansion
+- Real-time collaboration features
+- Integration with virtual tabletop platforms
+- Mobile apps for iOS and Android
+- AI-assisted content generation
+
+## Development Priorities
+1. Core campaign and character management
+2. Session planning tools
+3. Game resource database
+4. Advanced features and integrations 
