@@ -2,10 +2,12 @@
 
 import { useState, useEffect, createContext, useContext, useMemo } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { darkTheme, lightTheme } from '@/theme';
+import { EmotionCache } from './EmotionCache';
+import dynamic from 'next/dynamic';
 
 // Create theme context
 type ThemeMode = 'light' | 'dark' | 'system';
@@ -34,6 +36,12 @@ export const useThemeContext = () => {
   }
   return context;
 };
+
+// Dynamic import of ThemeToggle to reduce initial bundle size
+const ThemeToggle = dynamic(() => import('./ThemeToggle'), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
   // Check if browser prefers dark mode
@@ -93,12 +101,14 @@ export default function ThemeRegistry({ children }: { children: React.ReactNode 
   return (
     <ThemeContext.Provider value={themeContextValue}>
       <ColorModeContext.Provider value={colorModeValue}>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            {children}
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <EmotionCache>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              {children}
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </EmotionCache>
       </ColorModeContext.Provider>
     </ThemeContext.Provider>
   );

@@ -4,7 +4,7 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 const baseThemeOptions: ThemeOptions = {
   typography: {
     fontFamily: [
-      'Inter',
+      'var(--font-inter)',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',
@@ -17,37 +17,37 @@ const baseThemeOptions: ThemeOptions = {
       '"Segoe UI Symbol"',
     ].join(','),
     h1: {
-      fontFamily: 'Playfair Display, serif',
+      fontFamily: 'var(--font-playfair)',
       fontSize: '2.5rem',
       fontWeight: 600,
     },
     h2: {
-      fontFamily: 'Playfair Display, serif',
+      fontFamily: 'var(--font-playfair)',
       fontSize: '2rem',
       fontWeight: 600,
     },
     h3: {
-      fontFamily: 'Playfair Display, serif',
+      fontFamily: 'var(--font-playfair)',
       fontSize: '1.75rem',
       fontWeight: 600,
     },
     h4: {
-      fontFamily: 'Playfair Display, serif',
+      fontFamily: 'var(--font-playfair)',
       fontSize: '1.5rem',
       fontWeight: 600,
     },
     h5: {
-      fontFamily: 'Playfair Display, serif',
+      fontFamily: 'var(--font-playfair)',
       fontSize: '1.25rem',
       fontWeight: 600,
     },
     h6: {
-      fontFamily: 'Playfair Display, serif',
+      fontFamily: 'var(--font-playfair)',
       fontSize: '1rem',
       fontWeight: 600,
     },
     button: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'var(--font-montserrat)',
       textTransform: 'none' as const,
     },
   },

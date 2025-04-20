@@ -1,13 +1,10 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
 import ThemeRegistry from '@/components/ThemeRegistry'
-
-const inter = Inter({ subsets: ['latin'] })
+import FontLoader from '@/components/FontLoader'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'RPG Helper | Manage your tabletop campaigns',
-  description: 'The ultimate tool for managing tabletop RPG campaigns, characters, sessions, and more',
+  title: 'RPG Helper',
+  description: 'Tabletop RPG Campaign Management Application',
 }
 
 export default function RootLayout({
@@ -17,10 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThemeRegistry>
-          {children}
-        </ThemeRegistry>
+      <body>
+        <FontLoader>
+          <ThemeRegistry>
+            {children}
+          </ThemeRegistry>
+        </FontLoader>
       </body>
     </html>
   )
